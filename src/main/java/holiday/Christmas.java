@@ -1,21 +1,24 @@
 package holiday;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.Month;
 
 public class Christmas {
 
-    private final LocalDateTime dateTime;
+    private final String date;
 
-    public Christmas(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    private final LocalDate dateTime;
+
+    public Christmas(String date) {
+        this.date = date;
+        dateTime = LocalDate.parse(this.date);
     }
 
-    public boolean isChristmas() {
+    public String isChristmas() {
         if (dateTime.getMonth() == Month.DECEMBER && dateTime.getDayOfMonth() == 25) {
-            return true;
+            return "Merry Christmas!";
         }
-        return false;
+        return "Today is Not Christmas TT";
     }
 
 }
