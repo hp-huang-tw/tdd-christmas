@@ -1,15 +1,17 @@
 package holiday;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.Month;
-import java.time.ZoneId;
 
 public class Christmas {
 
+    private final LocalDateTime dateTime;
+
+    public Christmas(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
     public boolean isChristmas() {
-        final Instant now = Instant.now();
-        final LocalDateTime dateTime = LocalDateTime.ofInstant(now, ZoneId.systemDefault());
         if (dateTime.getMonth() == Month.DECEMBER && dateTime.getDayOfMonth() == 25) {
             return true;
         }
