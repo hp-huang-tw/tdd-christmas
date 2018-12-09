@@ -13,6 +13,13 @@ public class ChristmasTest {
     private Christmas christmas;
 
     @Test
+    public void todayIsChristmas () {
+        final LocalDateTime dateTime = LocalDateTime.of(2018, 12, 25, 10, 10, 0);
+        christmas = new Christmas(dateTime);
+        assertThat(christmas.isChristmas(), is(true));
+    }
+
+    @Test
     public void todayIsNotChristmas () {
         final LocalDateTime dateTime = LocalDateTime.of(2018, 12, 9, 10, 10, 0);
         christmas = new Christmas(dateTime);
