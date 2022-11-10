@@ -5,13 +5,10 @@ import java.time.Month;
 
 public class Christmas {
 
-    private final String date;
-
     private final LocalDate dateTime;
 
     public Christmas(String date) {
-        this.date = date;
-        dateTime = LocalDate.parse(this.date);
+        dateTime = LocalDate.parse(date);
     }
 
     public String isChristmas() {
